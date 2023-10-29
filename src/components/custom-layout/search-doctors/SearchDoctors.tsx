@@ -1,5 +1,5 @@
 import { LuSearch } from "react-icons/lu";
-export default function SeaarchDoctors() {
+export default function SearchDoctors() {
   return (
     <div className="relative">
       <input

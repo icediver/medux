@@ -1,23 +1,32 @@
 import { PropsWithChildren, ReactNode } from "react";
 import LogoSvg from "../ui/logo/LogoSvg";
-import SeaarchDoctors from "./search-doctors/SearchDoctors";
 import User from "./user/User";
 import Sidebar from "./sidebar/SideBar";
+import { getPath } from "@/helpers/pathname/pathname.helpers";
+import SearchDoctors from "./search-doctors/SearchDoctors";
+import { headers } from "next/headers";
+import Logo from "../ui/logo/Logo";
 
 export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
-  return (
-    <main className="w-[1440px] grid grid-cols-7 mx-auto p-10">
-      <div className="flex items-center  gap-2 justify-start w-[164px]">
-        <LogoSvg className="" />
-        <span className="text-logo text-2xl font-rubik font-bold">medux</span>
-      </div>
-      <div className="col-span-6 flex items-center justify-between">
-        <SeaarchDoctors />
-        <User />
-      </div>
-      <Sidebar />
+  const headerList = headers();
+  const pathname = headerList.get("x-pathname");
 
-      <div className="col-span-6 mt-10">{children}</div>
-    </main>
+  return (
+    <section className="animate-opacity">
+      {pathname === "/auth" ? (
+        <div className="col-span-7">{children}</div>
+      ) : (
+        <main className="w-[1440px] grid grid-cols-7 mx-auto p-10">
+          <Logo />
+          <div className="col-span-6 flex items-center justify-between">
+            <SearchDoctors />
+            <User />
+          </div>
+          <Sidebar />
+
+          <div className="col-span-6 mt-10">{children}</div>
+        </main>
+      )}
+    </section>
   );
 }
