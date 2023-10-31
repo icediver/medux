@@ -1,5 +1,5 @@
-import { instance } from "@/helpers/api/api.interceptor";
-import { IUser } from "@/types/user.interface";
+import { axiosClassic, instance } from "@/helpers/api/api.interceptor";
+import { ISortUsers, IUser, IUsers } from "@/types/user.interface";
 
 const USERS = "users";
 
@@ -31,5 +31,12 @@ export const UserService = {
       url: `/${USERS}/profile/favorites/${productId}`,
       method: "PATCH",
     });
+  },
+  async getAll(queryParams?: ISortUsers) {
+    const response = await axiosClassic.get<IUsers>("/users", {
+      params: queryParams || {},
+    });
+
+    return response.data;
   },
 };

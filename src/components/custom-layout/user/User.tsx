@@ -14,7 +14,7 @@ export default function User() {
   const { push, refresh } = useRouter();
 
   return (
-    <div className="relative">
+    <div className="relative min-w-72">
       <div className="flex justify-center items-center gap-5">
         {profile && (
           <>
@@ -31,7 +31,7 @@ export default function User() {
             </div>
             <div>
               <div className="text-base">{profile?.name}</div>
-              <div className="text-xss">{profile?.email}</div>
+              <div className="text-xss">{profile?.speciality}</div>
             </div>
           </>
         )}

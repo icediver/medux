@@ -1,9 +1,9 @@
-import { IUser } from "@/types/user.interface";
+import { IUser, RoleTypeEnum } from "@/types/user.interface";
 
 export interface IUserState {
   email: string;
   name: string;
-  isAdmin: boolean;
+  role: RoleTypeEnum;
 }
 
 export interface ITokens {

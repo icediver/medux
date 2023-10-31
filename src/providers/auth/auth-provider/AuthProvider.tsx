@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { protectedRoutes } from "./protected-routes.data";
 import { REFRESH_TOKEN, getAccessToken } from "@/services/auth/auth.helper";
 import Auth from "@/components/screens/auth/Auth";
+import { RoleTypeEnum } from "@/types/user.interface";
 
 const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
   const { user } = useAuth();
@@ -30,7 +31,8 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 
   if (!isProtectedRoute) return <>{children}</>;
 
-  if (user?.isAdmin) return <>{children}</>;
+  if (user?.role === RoleTypeEnum.ADMIN) return <>{children}</>;
+
   if (user && isProtectedRoute) return <>{children}</>;
 
   if (pathname !== "/auth") return <Auth />;

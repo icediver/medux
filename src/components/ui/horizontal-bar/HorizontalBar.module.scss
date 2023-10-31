@@ -1,0 +1,8 @@
+@keyframes width {
+	from {
+		width: 0;
+	}
+}
+.bar {
+	animation: width 1.5s ease-in-out;
+}

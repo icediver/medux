@@ -9,10 +9,10 @@ const nextConfig = {
     domains: [
       "loremflickr.com",
       "www.aptronixindia.com",
-      "cdn1.ozone.ru",
       "localhost",
       "avatars.githubusercontent.com",
       "cloudflare-ipfs.com",
+      "i.pravatar.cc",
     ],
   },
   async rewrites() {

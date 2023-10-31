@@ -6,6 +6,7 @@ import { getPath } from "@/helpers/pathname/pathname.helpers";
 import SearchDoctors from "./search-doctors/SearchDoctors";
 import { headers } from "next/headers";
 import Logo from "../ui/logo/Logo";
+import SidebarNavigation from "./sidebar/sidebar-navigation/SidebarNavigation";
 
 export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
   const headerList = headers();
@@ -22,7 +23,9 @@ export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
             <SearchDoctors />
             <User />
           </div>
-          <Sidebar />
+          <Sidebar>
+            <SidebarNavigation />
+          </Sidebar>
 
           <div className="col-span-6 mt-10">{children}</div>
         </main>
