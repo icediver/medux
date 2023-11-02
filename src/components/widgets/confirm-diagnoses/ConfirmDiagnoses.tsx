@@ -25,6 +25,7 @@ export default function ConfirmDiagnoses({}: IConfirmDiagnoses) {
 						value={diagnose.values[activeTab]}
 						color={colors[index]}
 						className="my-5"
+						key={colors[index]}
 					/>
 				))}
 			</section>

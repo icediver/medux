@@ -10,6 +10,7 @@ import UpcommingAppointments from '@/components/widgets/upcomming-appointments/U
 import { useAuth } from '@/hooks/useAuth';
 import { useProfile } from '@/hooks/useProfile';
 import { IUser, RoleTypeEnum } from '@/types/user.interface';
+import { use } from 'react';
 
 interface IDashboard {}
 export default function Dashboard({}: IDashboard) {

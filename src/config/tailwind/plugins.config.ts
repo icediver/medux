@@ -1,83 +1,83 @@
-import plugin from "tailwindcss/plugin";
+import plugin from 'tailwindcss/plugin';
 
-const primary = "#e30b13";
+const primary = '#e30b13';
 
 export const plugins = [
-  // require("@tailwindcss/forms"),
-  // require("@tailwindcss/aspect-ratio"),
-  plugin(({ addComponents, theme, addUtilities, addBase }) => {
-    addComponents({
-      ".btn-primary": {
-        backgroundColor: primary,
-        color: "#fff",
-        borderRadius: "0.65rem",
-        transition: "background-color .3s ease-in-out",
-        "&:hover": {
-          backgroundColor: "#ff0009",
-        },
-      },
+	// require("@tailwindcss/forms"),
+	// require("@tailwindcss/aspect-ratio"),
+	plugin(({ addComponents, theme, addUtilities, addBase }) => {
+		addComponents({
+			'.btn-primary': {
+				backgroundColor: primary,
+				color: '#fff',
+				borderRadius: '0.65rem',
+				transition: 'background-color .3s ease-in-out',
+				'&:hover': {
+					backgroundColor: '#ff0009',
+				},
+			},
 
-      ".text-link": {
-        textUnderlineOffset: "4",
-        color: "rgba(255, 255, 255, .9)",
-        transition: "text-decoration-color .3s ease-in-out",
-        textDecorationLine: "underline",
-        textDecorationColor: "rgba(255, 255, 255, 0.2)",
-        "&:hover": {
-          textDecorationColor: "rgba(255, 255, 255, 0.9)",
-        },
-      },
+			'.text-link': {
+				textUnderlineOffset: '4',
+				color: 'rgba(255, 255, 255, .9)',
+				transition: 'text-decoration-color .3s ease-in-out',
+				textDecorationLine: 'underline',
+				textDecorationColor: 'rgba(255, 255, 255, 0.2)',
+				'&:hover': {
+					textDecorationColor: 'rgba(255, 255, 255, 0.9)',
+				},
+			},
 
-      ".air-block": {
-        borderRadius: theme("borderRadius.layout"),
-        backgroundColor: theme("colors.gray.950"),
-        color: theme("colors.white"),
-        boxShadow: theme("boxShadow.lg"),
-      },
-    }),
-      addUtilities({
-        ".text-shadow": {
-          textShadow: "1px 1px rgba(0, 0, 0, 0.4)",
-        },
+			'.air-block': {
+				borderRadius: theme('borderRadius.layout'),
+				backgroundColor: theme('colors.gray.950'),
+				color: theme('colors.white'),
+				boxShadow: theme('boxShadow.lg'),
+			},
+		}),
+			addUtilities({
+				'.text-shadow': {
+					textShadow: '1px 1px rgba(0, 0, 0, 0.4)',
+				},
 
-        ".outline-border-none": {
-          outline: "none",
-          border: "none",
-        },
+				'.outline-border-none': {
+					outline: 'none',
+					border: 'none',
+				},
 
-        ".flex-center-between": {
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        },
+				'.flex-center-between': {
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
+				},
 
-        ".image-like-bg": {
-          objectPosition: "center",
-          objectFit: "cover",
-          pointerEvents: "none",
-        },
-        ".scrolbar-hidden": {
-          "&::-webkit-scrollbar": {
-            display: "none",
-          },
-        },
-        ".transparent-panel": {
-          "background-color": "rgba(10,10,31,0.65)",
-          // "background-color": "rgba(0,1,13,0.65)",
-          borderRadius: "0.75rem",
-          "backdrop-filter": "blur(24px)",
-        },
-        ".select-panel": {
-          "background-color": "rgba(10,10,31,0.65)",
-          // "background-color": "rgba(0,1,13,0.65)",
-          "backdrop-filter": "blur(24px)",
-        },
-        ".text-gradient": {
-          background: "linear-gradient(90deg, #c731ef, #fe5f0c) ",
-          "-webkit-background-clip": "text",
-          color: "transparent",
-          "-webkit-text-fill-color": "transparent",
-        },
-      });
-  }),
+				'.image-like-bg': {
+					objectPosition: 'center',
+					objectFit: 'cover',
+					pointerEvents: 'none',
+				},
+				'.scrolbar-hidden': {
+					'&::-webkit-scrollbar': {
+						display: 'none',
+					},
+				},
+				'.transparent-panel': {
+					'background-color': 'rgba(9,10,10,0.15)',
+					// "background-color": "rgba(0,1,13,0.65)",
+					borderRadius: '0.75rem',
+					'backdrop-filter': 'blur(20px)',
+				},
+				'.select-panel': {
+					// 'background-color': 'rgba(10,10,31,0.05)',
+					// "background-color": "rgba(0,1,13,0.65)",
+					// 'backdrop-filter': 'blur(2px)',
+				},
+				'.text-gradient': {
+					background: 'linear-gradient(90deg, #c731ef, #fe5f0c) ',
+					'-webkit-background-clip': 'text',
+					color: 'transparent',
+					'-webkit-text-fill-color': 'transparent',
+				},
+			});
+	}),
 ];

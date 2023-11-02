@@ -2,14 +2,16 @@ import tailwindStandartColors from 'tailwindcss/colors';
 
 export const colors = {
 	...tailwindStandartColors,
-	background: '#090A0A',
-	'bg-light': '#171819',
-	primary: '#2662F0',
-	logo: '#9EA7AC',
-	inactive: '#636D73',
-	avatar: '#CCCCCC',
-	emergency: '#414D55',
-	'error-color': '#F05568',
+	background: 'var(--background)',
+	'bg-light': 'var(--bg-light)',
+	'hover-phone': 'var(--hover-phone)',
+	primary: 'var(--primary)',
+	logo: 'var(--logo)',
+	inactive: 'var(--inactive)',
+	avatar: 'var(--avatar)',
+	emergency: 'var(--emergency)',
+	'emergency-text': 'var(--emergency-text)',
+	'error-color': 'var(--error-color)',
 
 	warning: '#F1D399',
 };
