@@ -34,6 +34,15 @@ export const plugins = [
 				color: theme('colors.white'),
 				boxShadow: theme('boxShadow.lg'),
 			},
+			'.border-solid-left': {
+				'border-left': '1px solid var(--border-schedule)',
+			},
+			'.border-dashed-bottom': {
+				'border-bottom': '1px dashed var(--border-schedule)',
+			},
+			'.border-dashed-top': {
+				'border-top': '1px dashed var(--border-schedule)',
+			},
 		}),
 			addUtilities({
 				'.text-shadow': {
@@ -60,6 +69,8 @@ export const plugins = [
 					'&::-webkit-scrollbar': {
 						display: 'none',
 					},
+					'-ms-overflow-style': 'none' /* IE and Edge */,
+					'scrollbar-width': 'none' /* Firefox */,
 				},
 				'.transparent-panel': {
 					'background-color': 'rgba(9,10,10,0.15)',
@@ -67,16 +78,17 @@ export const plugins = [
 					borderRadius: '0.75rem',
 					'backdrop-filter': 'blur(20px)',
 				},
-				'.select-panel': {
-					// 'background-color': 'rgba(10,10,31,0.05)',
-					// "background-color": "rgba(0,1,13,0.65)",
-					// 'backdrop-filter': 'blur(2px)',
-				},
 				'.text-gradient': {
 					background: 'linear-gradient(90deg, #c731ef, #fe5f0c) ',
 					'-webkit-background-clip': 'text',
 					color: 'transparent',
 					'-webkit-text-fill-color': 'transparent',
+				},
+				'.striped': {
+					height: '38px',
+					'margin-top': '1px',
+					background:
+						'repeating-linear-gradient( -45deg, var(--bg-light),   var(--bg-light) 10px,   var(--strip) 11px,   var(--strip) 12px)',
 				},
 			});
 	}),

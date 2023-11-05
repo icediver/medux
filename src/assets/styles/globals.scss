@@ -10,3 +10,27 @@
 body {
 	@apply bg-background text-logo;
 }
+
+@layer components {
+	.examination {
+		@apply border-b border-examination-border bg-examination-appointment;
+	}
+	.strip {
+		@apply z-0 striped #{!important};
+	}
+	.emergency {
+		@apply border-b border-emergency-border bg-emergency-appointment;
+	}
+	.consultation {
+		@apply border-b border-consultation-border bg-consultation-appointment;
+	}
+	.routine {
+		@apply border-b border-routine-border bg-routine-appointment;
+	}
+	.sick {
+		@apply border-b border-sick-border bg-sick-appointment;
+	}
+	.patient {
+		@apply z-0 h-[38px] border-none bg-background #{!important};
+	}
+}

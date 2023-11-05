@@ -1,16 +1,23 @@
-import { IUser } from "./user.interface";
+import { IUser } from './user.interface';
 
 export interface IAppointment {
-  title: string;
-  date: string;
-  type?:
-    | "emergency"
-    | "examination"
-    | "consultation"
-    | "routine checkup"
-    | "sick visit"
-    | "laborotory screening"
-    | "keeping pregnant";
-  doctor?: IUser;
-  patient?: IUser;
+	id: number;
+	createdAt?: string;
+	updatedAt?: string;
+	description: string;
+	title: string;
+	date: string;
+	type?: string;
+	doctor?: IUser;
+	patient?: IUser;
+	time: ITimeAppointment;
+	category: ICategoryAppointment;
+}
+export interface ITimeAppointment {
+	id: number;
+	time: string;
+}
+export interface ICategoryAppointment {
+	id: number;
+	name: string;
 }

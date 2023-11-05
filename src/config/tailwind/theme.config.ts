@@ -12,8 +12,19 @@ export const colors = {
 	emergency: 'var(--emergency)',
 	'emergency-text': 'var(--emergency-text)',
 	'error-color': 'var(--error-color)',
-
+	'border-schedule': 'var(--border-schedule)',
 	warning: '#F1D399',
+	'emergency-appointment': 'var(--emergency-appointment)',
+	'emergency-border': 'var(--emergency-border)',
+	'examination-appointment': 'var(--examination-appointment)',
+	'examination-border': 'var(--examination-border)',
+	'consultation-appointment': 'var(--consultation-appointment)',
+	'consultation-border': 'var(--consultation-border)',
+
+	'routine-appointment': 'var(--routine-appointment)',
+	'routine-border': 'var(--routine-border)',
+	'sick-appointment': 'var(--sick-appointment)',
+	'sick-border': 'var(--sick-border)',
 };
 export const theme = {
 	colors,
