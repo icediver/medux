@@ -8,6 +8,7 @@ import { RiAddCircleLine } from 'react-icons/ri';
 import CurrentTimeLine from '../current-time-line/CurrentTimeLine';
 import DayTime from './day-time/DayTime';
 import AppointmentItem from './appointment-item/AppointmentItem';
+import AppointmentLegend from './appointment-legend/AppointmentLegend';
 interface ITodayAppointments {
 	variant: 'doctor' | 'patient';
 	day: Date;
@@ -52,7 +53,7 @@ export function TodayAppointments({
 				</ul>
 				<CurrentTimeLine />
 			</div>
-			{variant === 'doctor' && <div className="">Emergency</div>}
+			{variant === 'doctor' && <AppointmentLegend />}
 		</div>
 	);
 }

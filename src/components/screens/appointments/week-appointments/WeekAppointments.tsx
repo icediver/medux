@@ -9,6 +9,7 @@ import { getCurrentWeek } from '@/helpers/date.helper';
 import WeekHeader from './week-header/WeekHeader';
 import DayTime from '../today-appointments/day-time/DayTime';
 import AppointmentItem from '../today-appointments/appointment-item/AppointmentItem';
+import AppointmentLegend from '../today-appointments/appointment-legend/AppointmentLegend';
 interface ITodayAppointments {
 	variant: 'doctor' | 'patient';
 	day: Date;
@@ -44,7 +45,7 @@ export function WeekAppointments({
 				</div>
 				<CurrentTimeLine />
 			</div>
-			{variant === 'doctor' && <div className="">Emergency</div>}
+			{variant === 'doctor' && <AppointmentLegend />}
 		</div>
 	);
 }
