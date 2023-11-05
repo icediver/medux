@@ -90,6 +90,11 @@ export const plugins = [
 					background:
 						'repeating-linear-gradient( -45deg, var(--bg-light),   var(--bg-light) 10px,   var(--strip) 11px,   var(--strip) 12px)',
 				},
+				'.weekend': {
+					'margin-top': '1px',
+					background:
+						'repeating-linear-gradient( -45deg, var(--bg-light),   var(--bg-light) 10px,   var(--strip) 11px,   var(--strip) 12px)',
+				},
 			});
 	}),
 ];

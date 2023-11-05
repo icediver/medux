@@ -14,7 +14,7 @@ interface IGetMonthExamShedule {
 	date: Date;
 	selectedDate: Date;
 }
-export const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+export const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 export const weekdaysLong = [
 	'Sunday',
 	'Monday',
@@ -55,10 +55,10 @@ export function getMonthShedule({ date, selectedDate }: IGetMonthExamShedule) {
 	let firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
 	let weekdayOfFirstDay = firstDayOfMonth.getDay();
 	let currentDays = [];
-	for (let day = 0; day < 42; day++) {
-		if (day === 0 && weekdayOfFirstDay === 0) {
+	for (let day = 1; day < 43; day++) {
+		if (day === 1 && weekdayOfFirstDay === 1) {
 			firstDayOfMonth.setDate(firstDayOfMonth.getDate() - 7);
-		} else if (day === 0) {
+		} else if (day === 1) {
 			firstDayOfMonth.setDate(
 				firstDayOfMonth.getDate() + (day - weekdayOfFirstDay)
 			);

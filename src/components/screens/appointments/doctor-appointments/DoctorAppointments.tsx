@@ -9,6 +9,7 @@ import {
 } from 'react-icons/io';
 import clsx from 'clsx';
 import { WeekAppointments } from '../week-appointments/WeekAppointments';
+import MonthAppointments from '../month-appointments/MonthAppointments';
 interface IDoctorAppointments {
 	variant?: RoleTypeEnum;
 }
@@ -60,7 +61,7 @@ export function DoctorAppointments({
 					</div>
 				</div>
 
-				<div className="overlay-hidden col-span-3 row-span-4 grid gap-6">
+				<div className="overlay-hidden col-span-3 row-span-4 grid ">
 					{activeTab === 2 && (
 						<TodayAppointments
 							day={day}
@@ -69,6 +70,12 @@ export function DoctorAppointments({
 					)}
 					{activeTab === 1 && (
 						<WeekAppointments
+							day={day}
+							variant={variant === RoleTypeEnum.DOCTOR ? 'doctor' : 'patient'}
+						/>
+					)}
+					{activeTab === 0 && (
+						<MonthAppointments
 							day={day}
 							variant={variant === RoleTypeEnum.DOCTOR ? 'doctor' : 'patient'}
 						/>
