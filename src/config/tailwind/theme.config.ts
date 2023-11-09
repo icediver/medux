@@ -88,6 +88,7 @@ export const theme = {
 		gridTemplateColumns: {
 			// Простая сетка из 16 столбцов
 			16: 'repeat(16, minmax(0, 1fr))',
+			19: 'repeat(19, minmax(0, 1fr))',
 		},
 		backgroundImage: {
 			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

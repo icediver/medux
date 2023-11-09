@@ -10,7 +10,7 @@ export function convertDate(createdAt: string) {
 	return `${day} ${month} ${year} / ${time.replace(' ', '')}`;
 }
 
-interface IGetMonthExamShedule {
+interface IGetMonthShedule {
 	date: Date;
 	selectedDate: Date;
 }
@@ -51,7 +51,7 @@ export const hours = [
 	{ key: '06:00 pm', value: 18 },
 ];
 
-export function getMonthShedule({ date, selectedDate }: IGetMonthExamShedule) {
+export function getMonthShedule({ date, selectedDate }: IGetMonthShedule) {
 	let firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
 	let weekdayOfFirstDay = firstDayOfMonth.getDay();
 	let currentDays = [];
@@ -66,7 +66,7 @@ export function getMonthShedule({ date, selectedDate }: IGetMonthExamShedule) {
 			firstDayOfMonth.setDate(firstDayOfMonth.getDate() + 1);
 		}
 
-		const calendarDay = {
+		const calendarDay: ICalendarDay = {
 			currentMonth: firstDayOfMonth.getMonth() === date.getMonth(),
 			date: new Date(firstDayOfMonth),
 			month: firstDayOfMonth.getMonth(),
@@ -78,6 +78,15 @@ export function getMonthShedule({ date, selectedDate }: IGetMonthExamShedule) {
 		currentDays.push(calendarDay);
 	}
 	return currentDays;
+}
+
+export interface ICalendarDay {
+	currentMonth: boolean;
+	date: Date;
+	month: number;
+	number: number;
+	selected: boolean;
+	year: number;
 }
 
 export function getCurrentDays(selectedDate: Date) {
