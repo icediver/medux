@@ -66,12 +66,15 @@ export function getMonthShedule({ date, selectedDate }: IGetMonthShedule) {
 			firstDayOfMonth.setDate(firstDayOfMonth.getDate() + 1);
 		}
 
+		const selected =
+			firstDayOfMonth.toDateString() === selectedDate.toDateString();
+
 		const calendarDay: ICalendarDay = {
 			currentMonth: firstDayOfMonth.getMonth() === date.getMonth(),
 			date: new Date(firstDayOfMonth),
 			month: firstDayOfMonth.getMonth(),
 			number: firstDayOfMonth.getDate(),
-			selected: firstDayOfMonth.toDateString() === selectedDate.toDateString(),
+			selected,
 			year: firstDayOfMonth.getFullYear(),
 		};
 

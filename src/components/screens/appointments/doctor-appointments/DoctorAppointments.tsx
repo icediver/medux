@@ -1,7 +1,7 @@
 import { RoleTypeEnum } from '@/types/user.interface';
 import { TodayAppointments } from '../today-appointments/TodayAppointments';
 import Tabs from '@/components/ui/tabs/Tabs';
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import {
 	IoIosArrowBack,
 	IoIosArrowForward,
@@ -17,16 +17,31 @@ export function DoctorAppointments({
 	variant = RoleTypeEnum.PATIENT,
 }: IDoctorAppointments) {
 	const [activeTab, setActiveTab] = useState(2);
-	const day = new Date();
+	const [currentDate, setCurrentDate] = useState<Date>(new Date());
+
+	function prevNextHandler(event: MouseEvent<HTMLButtonElement>) {
+		const direction = event.currentTarget.getAttribute('data-direction');
+		const type = event.currentTarget.getAttribute('data-type');
+		const offset = type === 'week' ? 7 : 30;
+		if (direction === 'back')
+			setCurrentDate(
+				new Date(currentDate.setDate(currentDate.getDate() - offset))
+			);
+		if (direction === 'forward')
+			setCurrentDate(
+				new Date(currentDate.setDate(currentDate.getDate() + offset))
+			);
+	}
+
 	return (
 		<>
 			<div className="mb-5 text-1.75xl  capitalize">
 				{variant?.toLowerCase()} Appoinments
 			</div>
-			<div className="col-row-4 col-span-3 rounded-xl bg-bg-light px-1">
+			<div className="col-row-4 col-span-3 rounded-xl bg-bg-light">
 				<div className="flex h-20 items-center justify-between overflow-hidden px-4">
 					<span className="text-lg">
-						{day.toLocaleString('en-Us', {
+						{currentDate.toLocaleString('en-Us', {
 							weekday: 'long',
 							month: 'long',
 							day: '2-digit',
@@ -50,11 +65,19 @@ export function DoctorAppointments({
 								'flex h-10 w-40 items-center justify-between rounded-lg bg-background px-5'
 							)}
 						>
-							<button>
+							<button
+								data-direction="back"
+								data-type={activeTab === 0 ? 'month' : 'week'}
+								onClick={prevNextHandler}
+							>
 								<IoIosArrowBack />
 							</button>
 							This {activeTab === 0 ? 'month' : 'week '}
-							<button>
+							<button
+								data-direction="forward"
+								onClick={prevNextHandler}
+								data-type={activeTab === 0 ? 'month' : 'week'}
+							>
 								<IoIosArrowForward />
 							</button>
 						</div>
@@ -64,19 +87,19 @@ export function DoctorAppointments({
 				<div className="overlay-hidden col-span-3 row-span-4 grid ">
 					{activeTab === 2 && (
 						<TodayAppointments
-							day={day}
+							day={currentDate}
 							variant={variant === RoleTypeEnum.DOCTOR ? 'doctor' : 'patient'}
 						/>
 					)}
 					{activeTab === 1 && (
 						<WeekAppointments
-							day={day}
+							day={currentDate}
 							variant={variant === RoleTypeEnum.DOCTOR ? 'doctor' : 'patient'}
 						/>
 					)}
 					{activeTab === 0 && (
 						<MonthAppointments
-							day={day}
+							day={currentDate}
 							variant={variant === RoleTypeEnum.DOCTOR ? 'doctor' : 'patient'}
 						/>
 					)}

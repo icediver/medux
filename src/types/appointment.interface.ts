@@ -4,20 +4,21 @@ export interface IAppointment {
 	id: number;
 	createdAt?: string;
 	updatedAt?: string;
+	time: ITimeSchedule;
+	doctor: IUser;
+	patient: IUser;
+	type: string;
 	description: string;
-	title: string;
+	category: IAppointmentCategory;
 	date: string;
-	type?: string;
-	doctor?: IUser;
-	patient?: IUser;
-	time: ITimeAppointment;
-	category: ICategoryAppointment;
 }
-export interface ITimeAppointment {
-	id: number;
-	time: string;
-}
-export interface ICategoryAppointment {
+
+export interface IAppointmentCategory {
 	id: number;
 	name: string;
+}
+
+export interface ITimeSchedule {
+	id: number;
+	time: string;
 }

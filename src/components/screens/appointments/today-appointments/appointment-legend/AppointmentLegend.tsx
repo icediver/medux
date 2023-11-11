@@ -1,6 +1,6 @@
 export default function AppointmentLegend() {
 	return (
-		<div className="mb-1 flex w-[700px] gap-2 px-4 py-1.5">
+		<div className="mb-1 flex w-[700px] gap-2 px-4 pb-5 pt-3.5">
 			<div className="flex items-center text-xs uppercase">
 				<div className="flex h-3 w-3 items-center justify-center  rounded-full bg-emergency-border">
 					<div className="h-1.5 w-1.5 rounded-full bg-background" />

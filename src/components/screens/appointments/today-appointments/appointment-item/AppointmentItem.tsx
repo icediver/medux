@@ -16,18 +16,22 @@ export default function AppointmentItem({
 		<li className="border-solid-left border-dashed-bottom flex h-10  pr-px first:border-dashed-top last:border-none">
 			{appointment ? (
 				<div
-					className={clsx('z-10 h-10 w-full', {
+					className={clsx('z-10 h-10 w-full animate-opacity', {
 						['examination']: appointment?.category?.id === 2,
-						['strip']: appointment?.category.id === 1,
-						['emergency']: appointment?.category.id === 3,
-						['consultation']: appointment?.category.id === 4,
-						['routine']: appointment?.category.id === 5,
-						['sick']: appointment?.category.id === 6,
+						['strip']: appointment?.category.id === 6,
+						['emergency']: appointment?.category.id === 1,
+						['consultation']: appointment?.category.id === 3,
+						['routine']: appointment?.category.id === 4,
+						['sick']: appointment?.category.id === 5,
 						['patient']: variant === 'patient',
 					})}
 				>
 					<div className="flex h-full items-center justify-center">
-						{variant === 'doctor' ? <>{appointment.description}</> : null}
+						{variant === 'doctor' ? (
+							<>
+								{!(appointment?.category.id === 6) && appointment.description}
+							</>
+						) : null}
 					</div>
 				</div>
 			) : (
