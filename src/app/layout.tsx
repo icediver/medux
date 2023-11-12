@@ -31,7 +31,7 @@ export default function RootLayout({
 	const theme = cookies().get('theme');
 
 	return (
-		<html lang="en">
+		<html lang="en" className="transition-all">
 			<body
 				className={`transition duration-700 ${roboto.variable} ${
 					rubik.variable

@@ -13,7 +13,7 @@ export default function AppointmentItem({
 	variant = 'patient',
 }: IAppointmentItem) {
 	return (
-		<li className="border-solid-left border-dashed-bottom flex h-10  pr-px first:border-dashed-top last:border-none">
+		<li className="border-solid-left border-dashed-bottom flex h-10   pr-px first:border-dashed-top last:border-none">
 			{appointment ? (
 				<div
 					className={clsx('z-10 h-10 w-full animate-opacity', {

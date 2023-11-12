@@ -1,7 +1,12 @@
 'use client';
 
+import Button from '@/components/ui/button/Button';
+import Tabs from '@/components/ui/tabs/Tabs';
+import BloodTestSpeedometer from '@/components/widgets/blood-test-speedometer/BloodTestSpeedometer';
+import Cardiogram from '@/components/widgets/cardiogram/Cardiogram';
 import ConfirmDiagnoses from '@/components/widgets/confirm-diagnoses/ConfirmDiagnoses';
 import LaboratoryTestsWidget from '@/components/widgets/laboratory-tests-widget/LaboratoryTestsWidget';
+import LocationOfPain from '@/components/widgets/location-of-pain/LocationOfPain';
 import NextPatientWidget from '@/components/widgets/next-patient-widget/NextPatientWidget';
 import OveralAppointment from '@/components/widgets/overal-apointment/OveralAppointment';
 import PatientPace from '@/components/widgets/patien-pace/PatientPace';
@@ -10,10 +15,12 @@ import UpcommingAppointments from '@/components/widgets/upcomming-appointments/U
 import { useAuth } from '@/hooks/useAuth';
 import { useProfile } from '@/hooks/useProfile';
 import { IUser, RoleTypeEnum } from '@/types/user.interface';
-import { use } from 'react';
+import { use, useState } from 'react';
 
 interface IDashboard {}
 export default function Dashboard({}: IDashboard) {
+	const [activeTab, setActiveTab] = useState(0);
+
 	const { profile } = useProfile();
 	const { user } = useAuth();
 	const role = user?.role === RoleTypeEnum.DOCTOR ? 'Doctor' : 'Patient';
@@ -21,24 +28,50 @@ export default function Dashboard({}: IDashboard) {
 		<>
 			<div className="mb-5 text-1.75xl">{`Basic ${role} Dashboard`}</div>
 			<div className="grid h-[800px] grid-cols-3 grid-rows-4 gap-6 ">
-				<NextPatientWidget
-					appointment={{
-						title: 'USG + Consultation',
-						date: '2023-10-27 13:06:33.329',
-						doctor: profile,
-					}}
-				/>
-				<LaboratoryTestsWidget
-					isFinished={true}
-					user={profile || ({} as IUser)}
-					type={'Beta 2 Microglobulin (B2M) Tumor Marker Test'}
-				/>
-				<UpcommingAppointments />
-				<OveralAppointment />
-				<PatientPace />
-				<RecentQuestions />
-				<ConfirmDiagnoses />
+				{activeTab === 0 && (
+					<>
+						<NextPatientWidget
+							appointment={{
+								title: 'USG + Consultation',
+								date: '2023-10-27 13:06:33.329',
+								doctor: profile,
+							}}
+						/>
+						<LaboratoryTestsWidget
+							isFinished={true}
+							user={profile || ({} as IUser)}
+							type={'Beta 2 Microglobulin (B2M) Tumor Marker Test'}
+						/>
+						<UpcommingAppointments />
+						<OveralAppointment />
+						<PatientPace />
+						<RecentQuestions />
+						<ConfirmDiagnoses />
+					</>
+				)}
+				{activeTab === 1 && (
+					<>
+						<Cardiogram />
+						<LocationOfPain />
+						<NextPatientWidget
+							appointment={{
+								title: 'USG + Consultation',
+								date: '2023-10-27 13:06:33.329',
+								doctor: profile,
+							}}
+						/>
+						<BloodTestSpeedometer />
+						<PatientPace />
+					</>
+				)}
 			</div>
+			<Tabs
+				values={['1', '2']}
+				activeTab={activeTab}
+				setActiveTab={setActiveTab}
+				variant="third"
+				className="mx-auto mt-5 !w-20  gap-0"
+			/>
 		</>
 	);
 }

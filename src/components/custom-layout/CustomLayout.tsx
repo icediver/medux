@@ -7,6 +7,7 @@ import Logo from '../ui/logo/Logo';
 import SidebarNavigation from './sidebar/sidebar-navigation/SidebarNavigation';
 import ToggleThemeSwitcher from '../widgets/toggle-theme-widget/ToggleThemeWidget';
 import { Theme } from '../widgets/toggle-theme-widget/theme.type';
+import ChangeTextSize from '../ui/change-text-size/ChangeTextSize';
 
 export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
 	const headerList = headers();
@@ -21,12 +22,13 @@ export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
 			) : (
 				<main className="mx-auto grid w-[1440px] grid-cols-7 p-10">
 					<Logo />
-					<div className="col-span-6 flex items-center justify-between">
+					<div className="relative col-span-6 flex items-center justify-between">
 						<SearchDoctors />
 						<div className="flex gap-8 ">
 							<ToggleThemeSwitcher theme={theme} />
 							<User />
 						</div>
+						<ChangeTextSize />
 					</div>
 					<Sidebar>
 						<SidebarNavigation />

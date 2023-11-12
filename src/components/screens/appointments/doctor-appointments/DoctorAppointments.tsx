@@ -84,7 +84,7 @@ export function DoctorAppointments({
 					</div>
 				</div>
 
-				<div className="overlay-hidden col-span-3 row-span-4 grid ">
+				<div className="overlay-hidden col-span-3 row-span-4 grid">
 					{activeTab === 2 && (
 						<TodayAppointments
 							day={currentDate}

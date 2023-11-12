@@ -1,7 +1,4 @@
-import {
-	appoinmentsDayTime,
-	appointmentsSchedule,
-} from '@/helpers/appointments.helper';
+import { appoinmentsDayTime } from '@/helpers/appointments.helper';
 import CurrentTimeLine from '../current-time-line/CurrentTimeLine';
 import { getCurrentWeek } from '@/helpers/date.helper';
 import WeekHeader from './week-header/WeekHeader';
@@ -10,8 +7,6 @@ import AppointmentItem from '../today-appointments/appointment-item/AppointmentI
 import AppointmentLegend from '../today-appointments/appointment-legend/AppointmentLegend';
 import { useQuery } from '@tanstack/react-query';
 import { AppointmentService } from '@/services/appointment.service';
-import { appointments } from '@/components/widgets/data/data';
-import { IAppointment } from '@/types/appointment.interface';
 interface ITodayAppointments {
 	variant: 'doctor' | 'patient';
 	day: Date;
@@ -36,7 +31,7 @@ export function WeekAppointments({
 	return (
 		<div className="animate-opacity">
 			<WeekHeader week={week} />
-			<div className="relative flex  h-[660px]  overflow-auto py-5 scrolbar-hidden">
+			<div className="relative flex  h-[660px]  overflow-auto px-px py-5 scrolbar-hidden">
 				<DayTime />
 				<div className="grid w-full grid-cols-7">
 					{data?.map((day, index) => {

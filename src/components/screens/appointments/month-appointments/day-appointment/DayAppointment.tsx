@@ -19,7 +19,7 @@ export default function DayAppointment({
 	return (
 		<div
 			className={clsx(
-				'nth-child(7n):text-red-600 flex h-[100px] w-full flex-col justify-between border-r border-t border-solid border-border-schedule p-4 text-1.25xl ',
+				'nth-child(7n):text-red-600 flex h-[100px] w-[163px] flex-col justify-between border-r border-t border-solid border-border-schedule p-4 text-1.25xl ',
 				{ ['bg-opacity-50 striped-day']: !day.appointments.length }
 			)}
 		>

@@ -27,6 +27,12 @@ export const AppointmentService = {
 			params: queryData,
 		});
 	},
+	async getNext(queryData = {} as TypeAppointmentsFilter) {
+		return instance<IAppointment>({
+			url: getAppointmentsUrl('/next'),
+			method: 'GET',
+		});
+	},
 
 	async getAppointmentsByDate(date: string) {
 		return instance<IAppointment[]>({

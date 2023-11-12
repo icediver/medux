@@ -39,39 +39,41 @@ export default function MonthAppointments({
 	return (
 		<>
 			<WeekHeader week={week.week} variant="month" />
-			<div className="grid grid-cols-7 pl-5 pr-0.5">
-				{[...Array(7)].map((_, index) => (
-					<div
-						key={index}
-						className="h-2.5 w-full border-l border-solid  border-border-schedule first:border-none"
-					/>
-				))}
-			</div>
-
-			<div className="flex">
-				<div className="grid grid-rows-6">
-					{[...Array(6)].map((_, index) => (
+			<div className=" h-[650px] animate-opacity">
+				<div className="grid  grid-cols-7 pl-5">
+					{[...Array(7)].map((_, index) => (
 						<div
 							key={index}
-							className={clsx(
-								'h-[100px] w-5  border-l border-r border-t border-solid  border-border-schedule bg-background first:rounded-tl-xl last:rounded-bl-xl',
-								{ ['bg-emergency']: index === currentWeek }
-							)}
+							className="h-2.5 w-[163px] border-r border-solid  border-border-schedule last:border-none"
 						/>
 					))}
 				</div>
-				<div className="grid grid-cols-7 grid-rows-6 [&>*:nth-child(-n+7)]:border-t-transparent [&>*:nth-child(7n)]:border-r-transparent">
-					{data?.map((day, index) => {
-						return (
-							<DayAppointment
-								key={day.date}
-								day={day}
-								currentMonth={month[index].currentMonth}
-								selected={month[index].selected}
-								setCurrentWeek={setCurrentWeek}
+
+				<div className="flex">
+					<div className="grid grid-rows-6">
+						{[...Array(6)].map((_, index) => (
+							<div
+								key={index}
+								className={clsx(
+									'h-[100px] w-5 border-l border-r border-t border-solid border-border-schedule  bg-background  first:rounded-tl-xl last:rounded-bl-xl',
+									{ ['bg-emergency']: index === currentWeek }
+								)}
 							/>
-						);
-					})}
+						))}
+					</div>
+					<div className="mx-px grid grid-cols-7 grid-rows-6 [&>*:nth-child(-n+7)]:border-t-transparent [&>*:nth-child(7n)]:border-r-transparent">
+						{data?.map((day, index) => {
+							return (
+								<DayAppointment
+									key={day.date}
+									day={day}
+									currentMonth={month[index].currentMonth}
+									selected={month[index].selected}
+									setCurrentWeek={setCurrentWeek}
+								/>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 			{variant === 'doctor' && <AppointmentLegend />}

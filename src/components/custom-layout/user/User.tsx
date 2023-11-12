@@ -24,8 +24,8 @@ export default function User() {
 						<div className="h-10 w-10 overflow-hidden rounded-lg bg-avatar">
 							<Image
 								src={profile.avatarPath}
-								height={40}
-								width={40}
+								height={80}
+								width={80}
 								alt="avatar"
 							/>
 						</div>
@@ -42,7 +42,7 @@ export default function User() {
 			{isShow && (
 				<div
 					ref={ref}
-					className="absolute top-12 h-20 w-full animate-opacity  rounded-b-lg border border-background bg-bg-light/80 p-5"
+					className="bg-bg-light/80 absolute top-12 h-20 w-full  animate-opacity rounded-b-lg border border-background p-5"
 				>
 					<button
 						onClick={() => {

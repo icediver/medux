@@ -14,12 +14,6 @@ export default function Appointment({
 	appointment,
 	variant = 'sm',
 }: IAppointmentItem) {
-	const date = new Date(appointment.date);
-
-	const time = new Intl.DateTimeFormat('en', { timeStyle: 'short' })
-		.format(date)
-		.replace(' ', '');
-
 	return (
 		<div
 			className={clsx({
@@ -35,16 +29,16 @@ export default function Appointment({
 				})}
 			>
 				<Image
-					src={appointment?.doctor?.avatarPath || ''}
+					src={appointment?.patient?.avatarPath || ''}
 					height={40}
 					width={40}
 					alt="avatar"
-					className="mr-5 rounded-lg"
+					className="mr-5 h-10 w-10 rounded-lg"
 				/>
 				<div className="flex w-full justify-between">
 					<div>
-						<div className="text-sm">{appointment.doctor?.name}</div>
-						<div>{appointment.title}</div>
+						<div className="text-xss">{appointment.patient?.name}</div>
+						<div>{appointment.description}</div>
 					</div>
 					<RoundedButton
 						Icon={AiOutlinePhone}
@@ -59,7 +53,7 @@ export default function Appointment({
 			>
 				<div className="flex items-center gap-2.5">
 					<LuClock8 />
-					<span className="text-sm">{time}</span>
+					<span className="text-sm">{appointment?.time?.time}</span>
 				</div>
 				<button className="hover:text-hover-phone">
 					<BsThreeDots />

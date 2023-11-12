@@ -30,10 +30,10 @@ export default function Widget({
 			className={clsx(
 				WidgetSizeEnum[size],
 				className,
-				'rounded-xl bg-bg-light py-6'
+				'animate-opacity rounded-xl bg-bg-light py-6'
 			)}
 		>
-			<div className="mx-6 flex animate-opacity justify-between text-lg">
+			<div className="mx-6 flex  justify-between text-lg">
 				<div className="">{title}</div>
 				{prevNextHandler && (
 					<div className="flex gap-2">

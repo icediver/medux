@@ -12,10 +12,10 @@ export default function WeekHeader({ week, variant = 'week' }: IWeakHeader) {
 	return (
 		<div
 			className={clsx(
-				'mx-px grid h-14 grid-cols-7  items-center justify-between rounded-lg bg-background pl-20 pr-px',
+				'mx-px grid h-14 grid-cols-7 items-center justify-between rounded-lg bg-background pl-20',
 				{
-					['pl-20']: variant === 'week',
-					['pl-5']: variant === 'month',
+					['pl-[72px]']: variant === 'week',
+					['pl-[19px]']: variant === 'month',
 				}
 			)}
 		>
@@ -23,10 +23,10 @@ export default function WeekHeader({ week, variant = 'week' }: IWeakHeader) {
 				week.map((weekday) => (
 					<div
 						className={clsx(
-							'flex h-full  items-center justify-center  border-l border-solid border-border-schedule text-sm',
+							'flex h-full w-[163px] items-center justify-center  border-r border-solid border-border-schedule text-sm last:border-none',
 							{
 								['bg-emergency text-white last:rounded-r-lg']: weekday.selected,
-								['first:border-none']: variant === 'month',
+								// ['first:border-none']: variant === 'month',
 							}
 						)}
 						key={weekday.weekday}
