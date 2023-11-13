@@ -9,7 +9,7 @@ export default function BloodTestSpeedometer({}: IBloodTestSpeedometer) {
 	return (
 		<Widget className="" title="Blood test speed" size="md">
 			<div className="relative flex h-full w-full items-center justify-center">
-				<Speedometer value={30} />
+				<Speedometer value={18} />
 			</div>
 		</Widget>
 	);

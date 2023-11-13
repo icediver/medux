@@ -30,13 +30,7 @@ export default function Dashboard({}: IDashboard) {
 			<div className="grid h-[800px] grid-cols-3 grid-rows-4 gap-6 ">
 				{activeTab === 0 && (
 					<>
-						<NextPatientWidget
-							appointment={{
-								title: 'USG + Consultation',
-								date: '2023-10-27 13:06:33.329',
-								doctor: profile,
-							}}
-						/>
+						<NextPatientWidget />
 						<LaboratoryTestsWidget
 							isFinished={true}
 							user={profile || ({} as IUser)}
@@ -53,13 +47,7 @@ export default function Dashboard({}: IDashboard) {
 					<>
 						<Cardiogram />
 						<LocationOfPain />
-						<NextPatientWidget
-							appointment={{
-								title: 'USG + Consultation',
-								date: '2023-10-27 13:06:33.329',
-								doctor: profile,
-							}}
-						/>
+						<NextPatientWidget />
 						<BloodTestSpeedometer />
 						<PatientPace />
 					</>
@@ -70,7 +58,7 @@ export default function Dashboard({}: IDashboard) {
 				activeTab={activeTab}
 				setActiveTab={setActiveTab}
 				variant="third"
-				className="mx-auto mt-5 !w-20  gap-0"
+				className="mx-auto mt-4 !w-20  gap-0"
 			/>
 		</>
 	);

@@ -1,16 +1,10 @@
-import {
-	appoinmentsDayTime,
-	appointmentsSchedule,
-} from '@/helpers/appointments.helper';
-import clsx from 'clsx';
+import { appoinmentsDayTime } from '@/helpers/appointments.helper';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { RiAddCircleLine } from 'react-icons/ri';
 import CurrentTimeLine from '../current-time-line/CurrentTimeLine';
 import DayTime from './day-time/DayTime';
 import AppointmentItem from './appointment-item/AppointmentItem';
 import AppointmentLegend from './appointment-legend/AppointmentLegend';
 import { useQuery } from '@tanstack/react-query';
-import { Appointments } from '../Appointments';
 import { AppointmentService } from '@/services/appointment.service';
 import { useState } from 'react';
 interface ITodayAppointments {
@@ -44,7 +38,7 @@ export function TodayAppointments({
 
 	return (
 		<div className="animate-opacity">
-			<div className="flex h-14 items-center justify-between rounded-xl bg-background px-5">
+			<div className="mx-px flex h-14 items-center justify-between rounded-xl bg-background px-5">
 				<button
 					className="hover:text-white"
 					onClick={() => prevNextHandler('prev')}
@@ -65,7 +59,7 @@ export function TodayAppointments({
 					<IoIosArrowForward />
 				</button>
 			</div>
-			<div className="relative flex h-[660px]  overflow-auto py-5 scrolbar-hidden">
+			<div className="relative mx-px flex  h-[660px] overflow-auto py-5 scrolbar-hidden">
 				<DayTime />
 				<ul className="w-full">
 					{appoinmentsDayTime.map((time, index) => {

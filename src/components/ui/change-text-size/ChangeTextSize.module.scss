@@ -1,10 +1,10 @@
 .range {
 	input[type='range'] {
-		// -webkit-appearance: none;
-		// appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
 		width: 100px;
 		cursor: pointer;
-		border-radius: 2px;
+		border-radius: 4px;
 		height: 4px;
 		accent-color: var(--emergency) !important;
 		background-color: var(--bg-light) !important;

@@ -9,7 +9,7 @@ export default function CurrentTimeLine() {
 	const procent =
 		(((dateState.getHours() - 9) * 60 + dateState.getMinutes()) / 1080) * 100;
 
-	const offset = (procent * 18 * 40 * 2) / 100 + 58;
+	const offset = (procent * 18 * 40 * 2) / 100 + 18;
 	const labelTime = dateState.toLocaleString('ru-Ru', {
 		hour: '2-digit',
 		minute: '2-digit',

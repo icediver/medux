@@ -24,17 +24,19 @@ export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
 					<Logo />
 					<div className="relative col-span-6 flex items-center justify-between">
 						<SearchDoctors />
-						<div className="flex gap-8 ">
-							<ToggleThemeSwitcher theme={theme} />
-							<User />
+						<div className="">
+							<div className="flex gap-8 ">
+								<ToggleThemeSwitcher theme={theme} />
+								<User />
+							</div>
+							<ChangeTextSize />
 						</div>
-						<ChangeTextSize />
 					</div>
 					<Sidebar>
 						<SidebarNavigation />
 					</Sidebar>
 
-					<div className="col-span-6 mt-10">{children}</div>
+					<div className="col-span-6 mt-6">{children}</div>
 				</main>
 			)}
 		</section>

@@ -24,7 +24,7 @@ export default function ChangeTextSize({
 	return (
 		<div
 			className={clsx(
-				'absolute right-10 top-16 flex items-center gap-2',
+				'relative left-32 top-16 flex   items-center gap-2',
 				styles.range
 			)}
 		>
@@ -32,18 +32,27 @@ export default function ChangeTextSize({
 			<label htmlFor="cowbell" className="text-xs">
 				Font size
 			</label>
-			<input
-				{...props}
-				className={clsx(className)}
-				type="range"
-				id="cowbell"
-				name="cowbell"
-				min="12"
-				max="22"
-				value={range}
-				onChange={(e) => setRange(+e.currentTarget.value)}
-				step="2"
-			/>
+
+			<div className="w-[100px relative flex items-center">
+				<span
+					className="t-0 absolute left-0  h-0.5 rounded-lg bg-emergency"
+					style={{ width: `${100 - ((22 - range) / 10) * 100}px` }}
+				/>
+				<input
+					{...props}
+					className={clsx(className)}
+					type="range"
+					id="cowbell"
+					name="cowbell"
+					min="12"
+					max="22"
+					value={range}
+					onChange={(e) => {
+						setRange(+e.currentTarget.value);
+					}}
+					step="2"
+				/>
+			</div>
 		</div>
 	);
 }

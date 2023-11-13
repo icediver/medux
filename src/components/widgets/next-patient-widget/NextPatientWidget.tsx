@@ -5,10 +5,8 @@ import Appointment from '@/components/ui/appointment/Appointment';
 import { useQuery } from '@tanstack/react-query';
 import { AppointmentService } from '@/services/appointment.service';
 
-interface INextPatientWidget {
-	appointment: IAppointment;
-}
-export default function NextPatientWidget({ appointment }: INextPatientWidget) {
+interface INextPatientWidget {}
+export default function NextPatientWidget({}: INextPatientWidget) {
 	const { data, isLoading } = useQuery({
 		queryKey: ['get next appointment'],
 		queryFn: () => AppointmentService.getNext(),

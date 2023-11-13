@@ -58,7 +58,52 @@ const needle = (
 	const xp = x0 + length * cos;
 	const yp = y0 + length * sin;
 
+	const circleLength = 2 * (oR - 30) * Math.PI;
 	return [
+		<circle
+			cx={x0}
+			cy={y0}
+			r={oR - 30}
+			fill={'none'}
+			stroke={color}
+			strokeWidth={8}
+			strokeDasharray={`2 ${circleLength / 27}`}
+			strokeDashoffset={'-4'}
+		/>,
+		<circle
+			cx={x0}
+			cy={y0}
+			r={oR - 30}
+			fill={'none'}
+			stroke={'var(--bg-light)'}
+			strokeWidth={20}
+			strokeDasharray={circleLength}
+			strokeDashoffset={circleLength - circleLength / 4 + 10}
+			transform={`rotate(48 ${x0} ${y0})`}
+		/>,
+
+		<foreignObject x={x0 / 2} y={y0 / 2} width="150" height="200">
+			<div className="z-10 flex h-full w-full flex-col justify-between text-xs">
+				<div className="flex h-full flex-col justify-between">
+					<div className="flex justify-between px-5 pt-2">
+						<span>400</span>
+						<span>600</span>
+					</div>
+					<div className="flex justify-between">
+						<span>200</span>
+						<span>800</span>
+					</div>
+					<div className="flex justify-between px-5 pb-3">
+						<span>0</span>
+						<span>1k+</span>
+					</div>
+				</div>
+				<div className="flex flex-col items-center justify-between">
+					<span className="text-xl">251</span>
+					<span>seconds</span>
+				</div>
+			</div>
+		</foreignObject>,
 		<circle
 			cx={x0}
 			cy={y0}
@@ -91,7 +136,7 @@ export default function Speedometer({ value }: ISpeedometer) {
 			<Pie
 				dataKey="value"
 				startAngle={225}
-				endAngle={-45}
+				endAngle={-48}
 				data={data}
 				cx={cx}
 				cy={cy}
@@ -100,6 +145,7 @@ export default function Speedometer({ value }: ISpeedometer) {
 				fill="none"
 				stroke="none"
 				className="p-0"
+				label
 			>
 				{data.map((entry, index) => (
 					<Cell
