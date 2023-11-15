@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactElement } from 'react';
 import { IconType } from 'react-icons';
 
 interface IRoundedButton extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,6 +8,7 @@ interface IRoundedButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export default function RoundedButton({
 	variant = 'primary',
+	children,
 	Icon,
 	className,
 	...rest
@@ -26,6 +27,7 @@ export default function RoundedButton({
 			)}
 		>
 			{Icon && <Icon />}
+			{children}
 		</button>
 	);
 }

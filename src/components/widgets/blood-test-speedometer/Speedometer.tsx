@@ -69,6 +69,7 @@ const needle = (
 			strokeWidth={8}
 			strokeDasharray={`2 ${circleLength / 27}`}
 			strokeDashoffset={'-4'}
+			key={'circle1001'}
 		/>,
 		<circle
 			cx={x0}
@@ -80,9 +81,16 @@ const needle = (
 			strokeDasharray={circleLength}
 			strokeDashoffset={circleLength - circleLength / 4 + 10}
 			transform={`rotate(48 ${x0} ${y0})`}
+			key={'circle1002'}
 		/>,
 
-		<foreignObject x={x0 / 2} y={y0 / 2} width="150" height="200">
+		<foreignObject
+			key={'foreignObject1001'}
+			x={x0 / 2}
+			y={y0 / 2}
+			width="150"
+			height="200"
+		>
 			<div className="z-10 flex h-full w-full flex-col justify-between text-xs">
 				<div className="flex h-full flex-col justify-between">
 					<div className="flex justify-between px-5 pt-2">
