@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, ReactElement } from 'react';
 import { IconType } from 'react-icons';
 
 interface IRoundedButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: 'primary' | 'secondary' | 'third';
+	variant?: 'primary' | 'secondary' | 'third' | 'fourth';
 	Icon?: IconType;
 }
 export default function RoundedButton({
@@ -22,6 +22,7 @@ export default function RoundedButton({
 					['bg-primary']: variant === 'primary',
 					['bg-background']: variant === 'secondary',
 					['bg-bg-light']: variant === 'third',
+					['bg-patient-item']: variant === 'fourth',
 				},
 				className
 			)}

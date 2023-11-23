@@ -14,7 +14,7 @@ export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
 	const pathname = headerList.get('x-pathname');
 
 	const theme =
-		cookies().get('theme')?.value === 'dark' ? Theme.dark : Theme.light;
+		cookies().get('theme')?.value === 'darkmode' ? Theme.dark : Theme.light;
 	return (
 		<section className="animate-opacity">
 			{pathname === '/auth' ? (

@@ -1,5 +1,5 @@
 import Tabs from '@/components/ui/tabs/Tabs';
-import Widget from '../widget/Widget';
+import Widget, { WidgetSizeEnum } from '../widget/Widget';
 import Men from '@/assets/images/Men.svg';
 import { MouseEvent, useEffect, useRef, useState } from 'react';
 import Button from '@/components/ui/button/Button';
@@ -26,7 +26,7 @@ export default function LocationOfPain({}: ILocationOfPain) {
 	const x = ref.current?.offsetLeft;
 	const y = ref.current?.offsetTop;
 	return (
-		<Widget size="lg" title="Location of pain">
+		<Widget size={WidgetSizeEnum['1x4']} title="Location of pain">
 			<Tabs
 				values={['Male', 'Female']}
 				activeTab={activeTab}

@@ -13,7 +13,7 @@ export default function NextPatientWidget({}: INextPatientWidget) {
 		select: ({ data }) => data,
 	});
 	return (
-		<Widget title="Next patient" size="base" prevNextHandler={() => {}}>
+		<Widget title="Next patient" prevNextHandler={() => {}}>
 			{isLoading && <div>Loading...</div>}
 			{!!data && <Appointment appointment={data} />}
 		</Widget>

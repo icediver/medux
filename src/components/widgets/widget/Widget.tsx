@@ -5,21 +5,22 @@ import { HTMLAttributes, ReactNode } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 export enum WidgetSizeEnum {
-	base = 'col-span-1 row-span-1 w-full h-[182px]',
-	md = 'row-span-2',
-	lg = 'w-full row-span-4',
-	xl = 'col-span-2 row-span-2',
-	'2xl' = 'col-span-3 row-span-4',
+	'1x1' = 'col-span-1 row-span-1 w-full h-[182px]',
+	'1x2' = 'row-span-2',
+	'1x4' = 'w-full row-span-4',
+	'2x2' = 'col-span-2 row-span-2',
+	'3x4' = 'col-span-3 row-span-4',
+	'2x4' = 'col-span-2 row-span-4',
 }
 
 interface IWidget extends HTMLAttributes<HTMLDivElement> {
 	children: ReactNode;
-	size?: 'base' | 'md' | 'lg' | 'xl' | '2xl';
+	size?: WidgetSizeEnum;
 	title: string;
 	prevNextHandler?: (direction: 'backward' | 'forward') => void;
 }
 export default function Widget({
-	size = 'base',
+	size = WidgetSizeEnum['1x1'],
 	children,
 	className,
 	prevNextHandler,
@@ -28,7 +29,7 @@ export default function Widget({
 	return (
 		<div
 			className={clsx(
-				WidgetSizeEnum[size],
+				size,
 				className,
 				'animate-opacity rounded-xl bg-bg-light py-6'
 			)}

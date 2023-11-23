@@ -1,6 +1,5 @@
 import Appointment from '@/components/ui/appointment/Appointment';
-import { appointments } from '../data/data';
-import Widget from '../widget/Widget';
+import Widget, { WidgetSizeEnum } from '../widget/Widget';
 import { useProfile } from '@/hooks/useProfile';
 import Week from '@/components/ui/week/Week';
 import { useState } from 'react';
@@ -34,7 +33,7 @@ export default function UpcommingAppointments({}: IUpcommingAppointments) {
 	}
 
 	return (
-		<Widget size="lg" title="Upcomming Appointments">
+		<Widget size={WidgetSizeEnum['1x4']} title="Upcomming Appointments">
 			<section className="h-full">
 				<div className="mx-5 mb-4 text-sm text-primary underline decoration-dashed">
 					{months}

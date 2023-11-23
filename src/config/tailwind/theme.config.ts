@@ -26,6 +26,8 @@ export const colors = {
 	'sick-appointment': 'var(--sick-appointment)',
 	'sick-border': 'var(--sick-border)',
 	'patient-item': 'var(--patient-item)',
+	messages: 'var(--messages)',
+	'message-border': 'var(--message-border)',
 };
 export const theme = {
 	colors,
@@ -71,13 +73,13 @@ export const theme = {
 					transform: 'scale(1)',
 				},
 			},
-		},
-		width: {
-			from: {
-				width: 0,
-			},
-			to: {
-				width: '100%',
+			width: {
+				from: {
+					width: '0',
+				},
+				to: {
+					width: '100%',
+				},
 			},
 		},
 

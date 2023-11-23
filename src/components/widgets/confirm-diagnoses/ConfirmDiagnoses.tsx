@@ -1,4 +1,4 @@
-import Widget from '../widget/Widget';
+import Widget, { WidgetSizeEnum } from '../widget/Widget';
 import Tabs from '@/components/ui/tabs/Tabs';
 import { useState } from 'react';
 import { confirmedDiagnoses } from '../data/data';
@@ -10,7 +10,11 @@ interface IConfirmDiagnoses {}
 export default function ConfirmDiagnoses({}: IConfirmDiagnoses) {
 	const [activeTab, setActiveTab] = useState(0);
 	return (
-		<Widget prevNextHandler={() => {}} title="Confirm diagnoses" size="md">
+		<Widget
+			prevNextHandler={() => {}}
+			title="Confirm diagnoses"
+			size={WidgetSizeEnum['1x2']}
+		>
 			<section className="mt-4 px-6">
 				<Tabs
 					values={['Year', 'Month', 'Week']}
