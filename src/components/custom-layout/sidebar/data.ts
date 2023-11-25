@@ -22,10 +22,10 @@ export const sidebarData: ISidebarData[] = [
 		path: '/appointments',
 		message: true,
 	},
-	{
-		title: 'Upcomming  Archive',
-		path: '/archive',
-	},
+	// {
+	// 	title: 'Upcomming  Archive',
+	// 	path: '/archive',
+	// },
 	{
 		title: 'Patients',
 		Icon: PiUsersThree,

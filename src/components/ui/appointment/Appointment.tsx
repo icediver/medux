@@ -28,13 +28,17 @@ export default function Appointment({
 					['mb-5']: variant === 'lg',
 				})}
 			>
-				<Image
-					src={appointment?.patient?.avatarPath || ''}
-					height={40}
-					width={40}
-					alt="avatar"
-					className="mr-5 h-10 w-10 rounded-lg"
-				/>
+				<div className="relative mr-5 h-10 w-10">
+					<Image
+						src={appointment?.patient?.avatarPath || ''}
+						// height={40}
+						// width={40}
+						alt="avatar"
+						fill
+						sizes="100px"
+						className=" rounded-lg object-cover"
+					/>
+				</div>
 				<div className="flex w-full justify-between">
 					<div>
 						<div className="text-xss">{appointment.patient?.name}</div>

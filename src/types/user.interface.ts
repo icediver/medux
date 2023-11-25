@@ -15,6 +15,7 @@ export interface IUser {
 	phone: string;
 	role: RoleTypeEnum;
 	speciality?: string;
+	rating?: number;
 }
 export interface ISortUsers {
 	perPage?: string;

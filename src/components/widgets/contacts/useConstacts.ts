@@ -28,5 +28,7 @@ export const useConstacts = ({ setActiveUser }: IUseContacts) => {
 		}
 	}, [isSuccess]);
 
+	console.log(users);
+
 	return { users, isLoading };
 };

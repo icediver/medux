@@ -18,21 +18,25 @@ import { PiTelegramLogo } from 'react-icons/pi';
 import { useQuery } from '@tanstack/react-query';
 import { ChatsService } from '@/services/chat.service';
 import { IDayMessages } from '@/types/message.interface';
+import { useChatById } from './useChatById';
 
 interface IChatWindow {
 	userTo: IUser;
 }
 
 export function ChatWindow({ userTo }: IChatWindow) {
-	const { data } = useQuery({
-		queryKey: ['get chat id', userTo],
-		queryFn: async () => {
-			const chat = await ChatsService.getChat(userTo.id);
-			return chat;
-		},
-		select: ({ data }) => data,
-	});
-	const { chat, sendMessage, removeMessage, isConnected } = useChat(data?.id);
+	// const { data } = useQuery({
+	// 	queryKey: ['get chat id', userTo],
+	// 	queryFn: async () => {
+	// 		const chat = await ChatsService.getChat(userTo.id);
+	// 		return chat;
+	// 	},
+	// 	select: ({ data }) => data,
+	// });
+	// const { chat, sendMessage, removeMessage, isConnected } = useChat(data?.id);
+	const { chatId, sendMessage, removeMessage, isConnected, chat } = useChatById(
+		userTo.id
+	);
 	const [message, setMessage] = useState('');
 	const { user } = useAuth();
 	const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -58,7 +62,8 @@ export function ChatWindow({ userTo }: IChatWindow) {
 		}
 	};
 	const removeMessageHandler = async (messageId: number) => {
-		removeMessage({ chatId: Number(data?.id), messageId });
+		removeMessage({ chatId: Number(chatId), messageId });
+		// removeMessage({ chatId: Number(data?.id), messageId });
 	};
 	const clickMessageHandler = async () => {
 		sendMessage({

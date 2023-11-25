@@ -13,6 +13,7 @@ const nextConfig = {
 			'avatars.githubusercontent.com',
 			'cloudflare-ipfs.com',
 			'i.pravatar.cc',
+			'm.media-amazon.com',
 		],
 	},
 	webpack(config) {

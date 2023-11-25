@@ -1,0 +1,10 @@
+.review {
+	&::after {
+		content: '';
+		position: absolute; /* Абсолютное позиционирование */
+		left: 30px;
+		top: -20px; /* Положение треугольника */
+		border: 10px solid transparent; /* Прозрачные границы */
+		border-bottom: 10px solid var(--background); /* Добавляем треугольник */
+	}
+}

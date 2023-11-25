@@ -45,7 +45,7 @@ export default async function PatientsListLayout({
 	return (
 		<section className="animate-opacity">
 			<div className="mb-5 text-1.75xl  capitalize">Patients List</div>
-			<div className="col-row-4 col-span-3 h-[800px] rounded-xl bg-bg-light">
+			<div className="col-row-4 col-span-3 h-[800px] overflow-hidden rounded-xl bg-bg-light ">
 				<div className="flex h-20 items-center justify-between overflow-hidden px-4">
 					<PatientsHeader />
 				</div>
@@ -71,7 +71,9 @@ export default async function PatientsListLayout({
 					))}
 				</div>
 
-				{children}
+				<div className="h-[620px] overflow-auto scrolbar-hidden">
+					{children}
+				</div>
 			</div>
 		</section>
 	);

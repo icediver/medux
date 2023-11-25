@@ -1,5 +1,3 @@
-'use client';
-
 import clsx from 'clsx';
 import { HTMLAttributes, ReactNode } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
