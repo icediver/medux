@@ -7,7 +7,7 @@ interface ISearchList {
 }
 export default function SearchList({ users }: ISearchList) {
 	return (
-		<ul className="absolute left-0 top-11  z-10 w-full rounded-b-lg border border-emergency/50  px-4 pt-5 transparent-panel">
+		<ul className="absolute left-0 top-11  z-10 w-full rounded-b-lg border border-emergency   px-4 pt-5 transparent-panel">
 			{users.map((user) => (
 				<li key={user.email} className="mb-4 animate-opacity">
 					<Link href={'/'} className="grid grid-cols-2 items-center">

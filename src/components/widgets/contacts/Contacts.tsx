@@ -14,8 +14,6 @@ export default function Contacts({ activeUser, setActiveUser }: IContacts) {
 	const roles = [RoleTypeEnum.PATIENT, RoleTypeEnum.DOCTOR];
 	const { users, isLoading } = useConstacts({ setActiveUser });
 
-	useEffect(() => console.log(users), [users]);
-
 	return (
 		<Widget size={WidgetSizeEnum['1x4']} title="" className="py-5">
 			<div className="border-b border-b-message-border pb-5">

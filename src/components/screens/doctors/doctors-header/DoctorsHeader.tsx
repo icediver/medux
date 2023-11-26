@@ -1,15 +1,18 @@
-'use client';
-
-import NextButton from '@/components/ui/next-button/NextButton';
 import Tabs from '@/components/ui/tabs/Tabs';
 import { useState } from 'react';
+import SelectDepartment from './select-department/SelectDepartment';
 
-export default function DoctorsHeader() {
+interface IDoctorsHeader {
+	selectDepartmentHandler: (department: string) => void;
+}
+
+export default function DoctorsHeader({
+	selectDepartmentHandler,
+}: IDoctorsHeader) {
 	const [activeTab, setActiveTab] = useState(0);
 	return (
 		<div className="flex w-full justify-between">
-			<NextButton variant="month" />
-
+			<SelectDepartment selectDepartmentHandler={selectDepartmentHandler} />
 			<Tabs
 				activeTab={activeTab}
 				setActiveTab={setActiveTab}

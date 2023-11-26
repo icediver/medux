@@ -33,6 +33,7 @@ export const UserService = {
 		});
 	},
 	async getAll(queryParams?: ISortUsers) {
+		console.log(queryParams);
 		const response = await axiosClassic.get<IUsers>('/users', {
 			params: queryParams || {},
 		});

@@ -11,12 +11,23 @@ interface IDoctors {
 	doctors: IUser[];
 }
 export default function Doctors({ doctors }: IDoctors) {
-	const { data, isSuccess, isLoading, searchTerm, setSearchTerm } =
-		useSearchDoctors({ doctors });
+	const {
+		data,
+		isSuccess,
+		isLoading,
+		searchTerm,
+		setSearchTerm,
+		setDepartment,
+	} = useSearchDoctors({ doctors });
+
+	function selectDepartmentHandler(department: string) {
+		setDepartment({ speciality: department });
+	}
+
 	return (
 		<>
 			<div className="flex h-20 items-center justify-between overflow-hidden px-4">
-				<DoctorsHeader />
+				<DoctorsHeader selectDepartmentHandler={selectDepartmentHandler} />
 			</div>
 			<div
 				className={clsx(

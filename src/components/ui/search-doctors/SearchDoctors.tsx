@@ -11,7 +11,7 @@ export function SearchDoctors({
 	setSearchTerm,
 }: ISearchDoctorRating) {
 	return (
-		<div className="relative h-20   px-5">
+		<div className="relative h-20  px-5">
 			<input
 				typeof="text"
 				className="h-full w-full rounded-lg bg-background pl-12 text-sm text-logo focus:outline-none "
