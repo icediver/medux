@@ -11,14 +11,16 @@ export default function SearchList({ users }: ISearchList) {
 			{users.map((user) => (
 				<li key={user.email} className="mb-4 animate-opacity">
 					<Link href={'/'} className="grid grid-cols-2 items-center">
-						<div className="flex items-center">
-							<Image
-								src={user.avatarPath}
-								alt="avatar"
-								className="h-10 w-10 rounded-lg"
-								width={40}
-								height={40}
-							/>
+						<div className=" flex items-center">
+							<div className="relative h-10 w-10">
+								<Image
+									src={user.avatarPath}
+									alt="avatar"
+									className="rounded-lg object-cover"
+									fill
+									sizes="100px"
+								/>
+							</div>
 							<span className="ml-3">{user.name}</span>
 						</div>
 						<div className="items-center">{user?.speciality}</div>

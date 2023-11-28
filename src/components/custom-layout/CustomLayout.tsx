@@ -8,6 +8,7 @@ import SidebarNavigation from './sidebar/sidebar-navigation/SidebarNavigation';
 import ToggleThemeSwitcher from '../widgets/toggle-theme-widget/ToggleThemeWidget';
 import { Theme } from '../widgets/toggle-theme-widget/theme.type';
 import ChangeTextSize from '../ui/change-text-size/ChangeTextSize';
+import { ChangeContrast } from '../ui/change-contrast/ChangeContrast';
 
 export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
 	const headerList = headers();
@@ -25,11 +26,14 @@ export default function CustomLayout({ children }: PropsWithChildren<unknown>) {
 					<div className="relative col-span-6 flex items-center justify-between">
 						<SearchDoctors />
 						<div className="">
-							<div className="flex gap-8 ">
+							<div className="flex justify-end gap-6">
 								<ToggleThemeSwitcher theme={theme} />
 								<User />
 							</div>
-							<ChangeTextSize />
+							<div className="relative top-12 flex">
+								<ChangeContrast />
+								<ChangeTextSize />
+							</div>
 						</div>
 					</div>
 					<Sidebar>

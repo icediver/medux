@@ -23,10 +23,7 @@ export default function ChangeTextSize({
 	}, [range]);
 	return (
 		<div
-			className={clsx(
-				'relative left-32 top-16 flex   items-center gap-2',
-				styles.range
-			)}
+			className={clsx('left-32 flex items-center  gap-2 pl-3', styles.range)}
 		>
 			<FaFont />
 			<label htmlFor="cowbell" className="text-xs">
