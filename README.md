@@ -14,6 +14,10 @@ pnpm dev
 bun dev
 ```
 
+
+https://github.com/icediver/medux-frontend/assets/10204493/184f7c77-4135-4055-ba67-e12072c4ded8
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
