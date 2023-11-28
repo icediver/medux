@@ -15,7 +15,10 @@ bun dev
 ```
 
 
-https://github.com/icediver/medux-frontend/assets/10204493/184f7c77-4135-4055-ba67-e12072c4ded8
+https://github.com/icediver/medux-frontend/assets/10204493/db0d42f3-a215-423f-85b0-70d8b3818ef7
+
+
+
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
